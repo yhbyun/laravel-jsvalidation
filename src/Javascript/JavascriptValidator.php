@@ -39,10 +39,25 @@ class JavascriptValidator implements Arrayable
 
     /**
      * 'ignore' option for jQuery Validation Plugin.
+     * 'excluded' option for bootstrap validation plugin.
      *
      * @var string
      */
     protected $ignore;
+
+    /**
+     * input elements to ignore validation rules.
+     *
+     * @var string
+     */
+    protected $exclude;
+
+    /**
+     * misc options
+     *
+     * @var string
+     */
+    protected $misc;
 
     /**
      * @param ValidatorHandler $validator
@@ -64,6 +79,7 @@ class JavascriptValidator implements Arrayable
         $this->selector = empty($options['selector']) ? 'form' : $options['selector'];
         $this->view = empty($options['view']) ? 'jsvalidation::bootstrap' : $options['view'];
         $this->remote = isset($options['remote']) ? $options['remote'] : true;
+        $this->misc = $options['misc'];
     }
 
     /**
@@ -141,6 +157,13 @@ class JavascriptValidator implements Arrayable
             $data['ignore'] = $this->ignore;
         }
 
+        if (! is_null($this->exclude)) {
+            $data['exclude'] = $this->exclude;
+        }
+
+        if (! is_null($this->misc)) {
+            $data['misc'] = $this->misc;
+        }
         return $data;
     }
 
@@ -180,6 +203,21 @@ class JavascriptValidator implements Arrayable
     public function ignore($ignore)
     {
         $this->ignore = $ignore;
+
+        return $this;
+    }
+
+    /**
+     * Set the input name to ignore validation rule.
+     * TODO: 특정 입력의 특정 규칙을 무시하기
+     *
+     * @param string $exclude
+     *
+     * @return JavascriptValidator
+     */
+    public function exclude($exclude)
+    {
+        $this->exclude = $exclude;
 
         return $this;
     }

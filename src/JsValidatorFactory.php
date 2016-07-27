@@ -87,11 +87,11 @@ class JsValidatorFactory
      *
      * @param $formRequest
      * @param null $selector
-     *
+     * @param null $misc
      * @return JavascriptValidator
      * @throws FormRequestArgumentException
      */
-    public function formRequest($formRequest, $selector = null)
+    public function formRequest($formRequest, $selector = null, $misc = null)
     {
         if (! is_object($formRequest)) {
             $formRequest = $this->createFormRequest($formRequest);
@@ -101,7 +101,7 @@ class JsValidatorFactory
 
         $validator = $this->getValidatorInstance($rules, $formRequest->messages(), $formRequest->attributes());
 
-        return $this->validator($validator, $selector);
+        return $this->validator($validator, $selector, $misc);
     }
 
     protected function parseFormRequestName($class)
@@ -148,12 +148,13 @@ class JsValidatorFactory
      *
      * @param \Illuminate\Validation\Validator $validator
      * @param string|null                      $selector
+     * @param string|null                      $misc
      *
      * @return JavascriptValidator
      */
-    public function validator(Validator $validator, $selector = null)
+    public function validator(Validator $validator, $selector = null, $misc = null)
     {
-        return $this->jsValidator($validator, $selector);
+        return $this->jsValidator($validator, $selector, $misc);
     }
 
     /**
@@ -161,10 +162,11 @@ class JsValidatorFactory
      *
      * @param \Illuminate\Validation\Validator $validator
      * @param string|null                      $selector
+     * @param string|null                      $misc
      *
      * @return JavascriptValidator
      */
-    protected function jsValidator(Validator $validator, $selector = null)
+    protected function jsValidator(Validator $validator, $selector = null, $misc = null)
     {
         $remote = ! $this->options['disable_remote_validation'];
         $view = $this->options['view'];
@@ -176,7 +178,7 @@ class JsValidatorFactory
 
         $jsValidator = new ValidatorHandler($rules, $messages);
 
-        $manager = new JavascriptValidator($jsValidator, compact('view', 'selector', 'remote'));
+        $manager = new JavascriptValidator($jsValidator, compact('view', 'selector', 'remote', 'misc'));
 
         return $manager;
     }

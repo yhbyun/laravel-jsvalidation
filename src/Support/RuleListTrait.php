@@ -13,6 +13,7 @@ trait RuleListTrait
         'AlphaNum', 'Array', 'Before', 'Between', 'Boolean', 'Confirmed', 'Date',
         'DateFormat', 'Different', 'Digits', 'DigitsBetween', 'Email', 'English', 'Image',
         'In', 'Integer', 'Ip', 'Json', 'Max', 'Mimes', 'Min', 'NotIn', 'Numeric',
+        'Password', 'Phone2',
         'Regex', 'Required', 'RequiredIf', 'RequiredUnless', 'RequiredWith', 'RequiredWithAll',
         'RequiredWithout', 'RequiredWithoutAll', 'Same', 'Size', 'Sometimes',
         'String', 'Timezone', 'Url', ];

@@ -16,7 +16,7 @@ trait RuleListTrait
         'Password', 'Phone2',
         'Regex', 'Required', 'RequiredIf', 'RequiredUnless', 'RequiredWith', 'RequiredWithAll',
         'RequiredWithout', 'RequiredWithoutAll', 'Same', 'Size', 'Sometimes',
-        'String', 'Timezone', 'Url', ];
+        'String', 'Timezone', 'UniqueEmail', 'UniqueUsername', 'Url', ];
 
     /**
      * Rules validated in Server-Side.

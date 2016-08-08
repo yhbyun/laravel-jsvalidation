@@ -10,13 +10,13 @@ trait RuleListTrait
      * @var array
      */
     protected $clientRules = ['Accepted', 'After', 'Alpha', 'AlphaDash',
-        'AlphaNum', 'Array', 'Before', 'Between', 'Boolean', 'Confirmed', 'Date',
+        'AlphaNum', 'Array', 'Before', 'Between', 'Bizregno', 'Boolean', 'Confirmed', 'Date',
         'DateFormat', 'Different', 'Digits', 'DigitsBetween', 'Email', 'English', 'Image',
         'In', 'Integer', 'Ip', 'Json', 'Max', 'Mimes', 'Min', 'NotIn', 'Numeric',
         'Password', 'Phone2',
         'Regex', 'Required', 'RequiredIf', 'RequiredUnless', 'RequiredWith', 'RequiredWithAll',
         'RequiredWithout', 'RequiredWithoutAll', 'Same', 'Size', 'Sometimes',
-        'String', 'Timezone', 'UniqueEmail', 'UniqueUsername', 'Url', ];
+        'String', 'Timezone', 'UniqueBizregno', 'UniqueEmail', 'UniqueHost', 'UniqueUsername', 'Url', ];
 
     /**
      * Rules validated in Server-Side.

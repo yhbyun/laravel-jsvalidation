@@ -87,17 +87,24 @@ class JsValidatorFactory
      *
      * @param $formRequest
      * @param null $selector
+     * @param string $action create or update
      * @param null $misc
      * @return JavascriptValidator
      * @throws FormRequestArgumentException
      */
-    public function formRequest($formRequest, $selector = null, $misc = null)
+    public function formRequest($formRequest, $selector = null, $action = 'create', $misc = null)
     {
         if (! is_object($formRequest)) {
             $formRequest = $this->createFormRequest($formRequest);
         }
 
-        $rules = method_exists($formRequest, 'rules') ? $formRequest->rules() : [];
+        if (method_exists($formRequest, 'getRules')) {
+            $rules = $formRequest->getRules($action);
+        } elseif (method_exists($formRequest, 'rules')) {
+            $rules = $formRequest->rules();
+        } else {
+            $rules = [];
+        }
 
         $validator = $this->getValidatorInstance($rules, $formRequest->messages(), $formRequest->attributes());
 

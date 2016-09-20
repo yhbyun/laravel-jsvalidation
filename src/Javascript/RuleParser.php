@@ -163,7 +163,10 @@ class RuleParser
     {
         $attributeArray = explode('.', $attribute);
         if (count($attributeArray) > 1) {
-            return $attributeArray[0].'['.implode('][', array_slice($attributeArray, 1)).']';
+            $attribute = $attributeArray[0].'['.implode('][', array_slice($attributeArray, 1)).']';
+
+            // category_ids[0] 같은 경우는 category_ids[] 로 변경
+            $attribute = preg_replace('/\[\d+\]$/', '[]', $attribute);
         }
 
         return $attribute;

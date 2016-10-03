@@ -88,18 +88,23 @@ class JsValidatorFactory
      * @param $formRequest
      * @param null $selector
      * @param string $action create or update
-     * @param null $misc
+     * @param null|array $misc getRules나 form validation에 옵션으로 넘겨질 인자
      * @return JavascriptValidator
      * @throws FormRequestArgumentException
      */
-    public function formRequest($formRequest, $selector = null, $action = 'create', $misc = null)
+    public function formRequest($formRequest, $selector = null, $action = null, $misc = null)
     {
         if (! is_object($formRequest)) {
             $formRequest = $this->createFormRequest($formRequest);
         }
 
+        if (is_array($action)) {
+            $misc = $action;
+            $action = null;
+        }
+
         if (method_exists($formRequest, 'getRules')) {
-            $rules = $formRequest->getRules($action);
+            $rules = $formRequest->getRules($action, $misc);
         } elseif (method_exists($formRequest, 'rules')) {
             $rules = $formRequest->rules();
         } else {

@@ -168,4 +168,14 @@ trait JavascriptRulesTrait
     {
         return $this->ruleRequiredIf($attribute, $parameters);
     }
+
+    protected function ruleLt($attribute, array $parameters)
+    {
+        return $this->ruleRequiredIf($attribute, $parameters);
+    }
+
+    protected function ruleGt($attribute, array $parameters)
+    {
+        return $this->ruleRequiredIf($attribute, $parameters);
+    }
 }

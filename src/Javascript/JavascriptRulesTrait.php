@@ -178,4 +178,14 @@ trait JavascriptRulesTrait
     {
         return $this->ruleRequiredIf($attribute, $parameters);
     }
+
+    protected function ruleNotTooGt($attribute, array $parameters)
+    {
+        return $this->ruleRequiredIf($attribute, $parameters);
+    }
+
+    protected function ruleNotTooLt($attribute, array $parameters)
+    {
+        return $this->ruleRequiredIf($attribute, $parameters);
+    }
 }

@@ -15,7 +15,7 @@ trait RuleListTrait
         'In', 'Integer', 'Ip', 'Json', 'Lt', 'Max', 'Mimes', 'Min', 'NoEmail', 'NotIn',
         'NotTooGt', 'NotTooLt',
         'Numeric', 'NumericBetween', 'NumericMin', 'NumericMax',
-        'Password', 'Phone2', 'ProductSpec',
+        'Password', 'Phone2', 'ProductDesc', 'ProductSpec',
         'Regex', 'Required', 'RequiredIf', 'RequiredUnless', 'RequiredWith', 'RequiredWithAll',
         'RequiredWithout', 'RequiredWithoutAll', 'Same', 'Size', 'Sometimes',
         'String', 'Timezone', 'UniqueBizregno', 'UniqueEmail', 'UniqueHost', 'UniqueUsername', 'Url', ];

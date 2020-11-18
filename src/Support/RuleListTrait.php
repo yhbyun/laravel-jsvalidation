@@ -12,7 +12,7 @@ trait RuleListTrait
     protected $clientRules = ['Accepted', 'After', 'Alpha', 'AlphaDash',
         'AlphaNum', 'Array', 'Before', 'Between', 'Bizregno', 'Boolean', 'Confirmed', 'Date',
         'DateFormat', 'Different', 'Digits', 'DigitsBetween', 'Dollar', 'Email', 'English', 'Gt', 'Image',
-        'In', 'Integer', 'Ip', 'Json', 'Lt', 'Max', 'Mimes', 'Min', 'NoEmail', 'NotIn',
+        'In', 'Integer', 'Ip', 'Json', 'Lt', 'Max', 'MaxBytes', 'Mimes', 'Min', 'NoEmail', 'NotIn',
         'NotTooGt', 'NotTooLt',
         'Numeric', 'NumericBetween', 'NumericMin', 'NumericMax',
         'Password', 'Phone2', 'ProductDesc', 'ProductSpec',

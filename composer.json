@@ -23,12 +23,12 @@
     ],
     "require": {
         "php" : ">=5.4.0",
-        "illuminate/support": "~5.0",
-        "illuminate/validation": "~5.0",
-        "illuminate/contracts": "~5.0",
-        "illuminate/view": "~5.0",
-        "illuminate/config": "~5.0",
-        "illuminate/http": "~5.0"
+        "illuminate/support": "~5.0|~6.0|~7.0|~8.0",
+        "illuminate/validation": "~5.0|~6.0|~7.0|~8.0",
+        "illuminate/contracts": "~5.0|~6.0|~7.0|~8.0",
+        "illuminate/view": "~5.0|~6.0|~7.0|~8.0",
+        "illuminate/config": "~5.0|~6.0|~7.0|~8.0",
+        "illuminate/http": "~5.0|~6.0|~7.0|~8.0"
 
     },
     "require-dev": {
@@ -40,6 +40,15 @@
             "Proengsoft\\JsValidation\\": "src",
             "Proengsoft\\JsValidation\\Tests\\": "tests"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Proengsoft\\JsValidation\\JsValidationServiceProvider"
+            ],
+            "aliases": {
+                "JsValidator": "Proengsoft\\JsValidation\\Facades\\JsValidatorFacade"
+            }
+        }
     }
-
 }
